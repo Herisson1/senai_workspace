@@ -1,0 +1,18 @@
+
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-signin'}) do |f| %>
+  <h2 class="text-center">Sign Up</h2>
+
+  <%= f.error_notification %>
+  
+    <%= f.input :email, required: true, label: false, placeholder: 'E-mail', autofocus: true, input_html: {class: 'form-control'}  %>
+    <%= f.input :password, required: true, label: false, placeholder: 'Senha', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirmar Senha' %>
+  
+
+    <div class="form-actions">
+    <%= f.button :submit, "Cadastrar", input_html: {class: 'form-control'} %>
+    </div>
+    <%= render "devise/shared/links" %>
+<% end %>
+
